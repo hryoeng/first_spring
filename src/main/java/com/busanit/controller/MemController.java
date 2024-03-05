@@ -32,4 +32,36 @@ public class MemController{
 
         return "redirect:/memReg";
     }
+
+    @GetMapping("/memDetail")
+    public String memDetail(String num, Model model) {
+        Mem mem = memService.memDetail(num);
+        model.addAttribute("detail", mem);
+
+        return "memDetail";
+    }
+
+    @GetMapping("/memUpdate")
+    public String memUpdate(String num, Model model) {
+        Mem mem = memService.memDetail(num);
+        model.addAttribute("detail", mem);
+
+        return "memUpdate";
+    }
+
+    @PostMapping("/memUpdate")
+    public String memUpdate(Mem mem) {
+        memService.memUpdate(mem);
+
+        return "redirect:/memDetail?num=" + mem.getNum();
+    }
+
+    @GetMapping("/memDelete")
+    public String memDelete(String num) {
+        memService.memDelete(num);
+
+        return "redirect:/memList";   // 삭제 후 이동할 주소 호출
+        // return "memList"  -- jsp 페이지
+    }
+
 }

@@ -6,10 +6,21 @@
     <select id="selectList" resultType="com.busanit.model.Mem">
         SELECT * FROM mem ORDER BY num
     </select>
+    <select id="detail" resultType="com.busanit.model.Mem">
+        SELECT * FROM mem WHERE num = #{num}
+    </select>
     <insert id="insert">
         INSERT INTO mem(name, pwd, addr)
         VALUES(#{name}, #{pwd},#{addr})
     </insert>
-<!--    <update id=""></update>-->
-<!--    <delete id=""></delete>-->
+    <update id="update">
+        UPDATE mem SET
+            name = #{name},
+            pwd = #{pwd},
+            addr = #{addr}
+        WHERE num = #{num}
+    </update>
+    <delete id="delete">
+        DELETE FROM mem WHERE num = #{num}
+    </delete>
 </mapper>

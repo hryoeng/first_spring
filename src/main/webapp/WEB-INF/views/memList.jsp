@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>멤버 목록</title>
 </head>
 <body>
     <div class="container">
@@ -25,6 +25,7 @@
                         </tr>
                     </c:forEach>
                 </table>
+                <p><a href="/memReg">등록</a></p>
             </div>
         </div>
     </div>

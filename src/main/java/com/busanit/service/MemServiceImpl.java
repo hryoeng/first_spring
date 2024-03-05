@@ -20,4 +20,14 @@ public class MemServiceImpl implements MemService{
     public void memReg(Mem mem) {
         memMapper.insert(mem);
     }
+    @Override
+    public Mem memDetail(String num) {
+        return memMapper.detail(num);
+    }
+    public void memUpdate(Mem mem) {
+        memMapper.update(mem);
+    }
+    public void memDelete(String num) {
+        memMapper.delete(num);
+    }
 }
